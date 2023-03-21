@@ -6,14 +6,11 @@
   "main": "./build/main.cjs",
   "module": "./main.js",
   "exports": {
-    ".": {
-      "node": {
-        "import": "./main.js",
-        "require": "./build/main.cjs"
-      },
-      "browser": "./build/browser.esm.js",
-      "umd": "./build/snarkjs.min.js"
-    }
+    "node": {
+      "import": "./main.js",
+      "require": "./build/main.cjs"
+    },
+    "default": "./build/snarkjs.js"
   },
   "files": [
     "COPYING",
