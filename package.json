@@ -6,14 +6,11 @@
   "main": "./build/main.cjs",
   "module": "./main.js",
   "exports": {
-    ".": {
-      "node": {
-        "import": "./main.js",
-        "require": "./build/main.cjs"
-      },
-      "browser": "./build/browser.esm.js",
-      "umd": "./build/snarkjs.min.js"
-    }
+    "node": {
+      "import": "./main.js",
+      "require": "./build/main.cjs"
+    },
+    "default": "./build/snarkjs.js"
   },
   "files": [
     "COPYING",
@@ -30,6 +27,7 @@
     "build": "npm run buildcjs && npm run buildcli && npm run buildiife && npm run buildiifemin && npm run buildesm",
     "buildcjs": "rollup -c config/rollup.cjs.config.js",
     "buildcli": "rollup -c config/rollup.cli.config.js",
+    "buildbrowser": "BROWSER=true rollup -c config/rollup.browser.config.js",
     "buildiife": "BROWSER=true rollup -c config/rollup.iife.config.js",
     "buildiifemin": "BROWSER=true rollup -c config/rollup.iife_min.config.js",
     "buildesm": "BROWSER=true rollup -c config/rollup.browser.esm.config"
